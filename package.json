@@ -1,0 +1,24 @@
+{
+  "name": "file-manager-nodejs",
+  "version": "1.0.0",
+  "description": "File Manager with Node.js",
+  "main": "fileManager.js",
+  "type": "module",
+  "scripts": {
+    "start": "node fileManager.js"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EugeneKovgan/file-manager-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EugeneKovgan/file-manager-nodejs/issues"
+  },
+  "homepage": "https://github.com/EugeneKovgan/file-manager-nodejs#readme"
+}
