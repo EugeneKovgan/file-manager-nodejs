@@ -14,6 +14,8 @@ import {
   handleRemove,
 } from "./src/functions-fs.js";
 import { handleOsInfo } from "./src/functions-os.js";
+import { handleHash } from "./src/functions-hash.js";
+import { handleCompress, handleDecompress } from "./src/functions-compress.js";
 
 const args = process.argv.slice(2);
 const usernameArg = args.find((arg) => arg.startsWith("--username="));
@@ -92,6 +94,15 @@ async function handleCommand(input) {
       } else {
         console.log("Invalid input");
       }
+      break;
+    case "hash":
+      await handleHash(args[0]);
+      break;
+    case "compress":
+      await handleCompress(args[0], args[1]);
+      break;
+    case "decompress":
+      await handleDecompress(args[0], args[1]);
       break;
     default:
       console.log("Invalid input");
