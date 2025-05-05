@@ -1,7 +1,18 @@
 import { createInterface } from "readline";
 import { homedir } from "os";
 import { chdir, cwd } from "process";
-import { handleUp, handleLs, handleCd } from "./functions-fs.js";
+import {
+  handleUp,
+  handleLs,
+  handleCd,
+  handleCat,
+  handleAdd,
+  handleMkdir,
+  handleRename,
+  handleCopy,
+  handleMove,
+  handleRemove,
+} from "./src/functions-fs.js";
 
 const args = process.argv.slice(2);
 const usernameArg = args.find((arg) => arg.startsWith("--username="));
