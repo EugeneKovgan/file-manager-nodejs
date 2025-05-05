@@ -13,6 +13,7 @@ import {
   handleMove,
   handleRemove,
 } from "./src/functions-fs.js";
+import { handleOsInfo } from "./src/functions-os.js";
 
 const args = process.argv.slice(2);
 const usernameArg = args.find((arg) => arg.startsWith("--username="));
@@ -50,7 +51,9 @@ rl.on("line", async (line) => {
 });
 
 async function handleCommand(input) {
-  const [command, ...args] = input.split(" ");
+  const parts = input.split(" ");
+  const command = parts[0];
+  const args = parts.slice(1);
 
   switch (command) {
     case "up":
@@ -82,6 +85,13 @@ async function handleCommand(input) {
       break;
     case "rm":
       await handleRemove(args[0]);
+      break;
+    case "os":
+      if (args.length > 0) {
+        handleOsInfo(args[0]);
+      } else {
+        console.log("Invalid input");
+      }
       break;
     default:
       console.log("Invalid input");
